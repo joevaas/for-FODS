@@ -1,0 +1,59 @@
+# Import libraries
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+# Load dataset (replace path with your file location)
+
+df = pd.read_csv("diabetes.csv")
+
+# Display basic info
+
+print(df.info())
+
+print(df.describe())
+
+# Univariate Analysis: Numeric Variables
+
+numeric_cols = df.select_dtypes (include=['float64', 'int64']).columns
+
+for col in numeric_cols:
+
+plt.figure(figsize=(12, 5))
+
+# Histogram + KDE
+
+plt.subplot(1, 2, 1)
+
+sns.histplot(df [col], kde True, bins=30)
+
+plt.title(f'Distribution of {col}')
+
+# Boxplot
+
+plt.subplot(1, 2, 2)
+
+sns.boxplot(x=df[col])
+
+plt.title(f'Boxplot of {col}')
+
+plt.show()
+
+# Univariate Analysis: Categorical Variables
+
+categorical_cols = ['Outcome']
+
+for col in categorical_cols:
+
+plt.figure(figsize=(6, 4))
+
+sns.countplot(x=df[col])
+
+plt.title(f'Countplot of {col}')
+
+plt.show()
+
+print(df[col].value_counts (normalize=True)*100)
