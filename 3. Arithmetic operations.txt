@@ -1,0 +1,50 @@
+import numpy as np
+
+# Create two NumPy arrays
+a = np.array([10, 20, 30, 40])
+b = np.array([2, 4, 6, 8])
+
+# Perform basic arithmetic operations
+add = np.add(a, b)
+sub = np.subtract(a, b)
+mul = np.multiply(a, b)
+div = np.divide(a, b)
+
+# Display results
+print("Array a:", a)
+print("Array b:", b)
+print("Addition:", add)
+print("Subtraction:", sub)
+print("Multiplication:", mul)
+print("Division:", div)
+
+Output
+Array a: [10 20 30 40]
+Array b: [2 4 6 8]
+Addition: [12 24 36 48]
+Subtraction: [ 8 16 24 32]
+Multiplication: [ 20  80 180 320]
+Division: [5. 5. 5. 5.]
+
+B
+
+import numpy as np
+
+a = np.array([[1, 2, 3], [4, 5, 6]])
+
+transpose = a.T
+
+print("Original Array:")
+print(a)
+print("Transposed Array:")
+print(transpose)
+
+Output
+Original Array:
+[[1 2 3]
+[4 5 6]]
+
+Transposed Array:
+[[1 4]
+ [2 5]
+ [3 6]]
