@@ -1,0 +1,65 @@
+# --------------------------------------------
+# 📊 BIVARIATE ANALYSIS - PIMA INDIANS DIABETES DATASET
+# --------------------------------------------
+
+# Import required libraries
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset (make sure diabetes.csv is in the same folder)
+df = pd.read_csv("diabetes.csv")
+
+# Display first few rows
+print("🔹 First 5 records:")
+print(df.head())
+
+# Display dataset info
+print("\n🔹 Dataset Info:")
+print(df.info())
+
+# --------------------------------------------
+# 1️⃣ Glucose vs Outcome
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.boxplot(x="Outcome", y="Glucose", data=df, palette="coolwarm")
+plt.title("Glucose vs Outcome")
+plt.show()
+
+# --------------------------------------------
+# 2️⃣ BMI vs Outcome
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.boxplot(x="Outcome", y="BMI", data=df, palette="viridis")
+plt.title("BMI vs Outcome")
+plt.show()
+
+# --------------------------------------------
+# 3️⃣ Age vs Outcome
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.histplot(data=df, x="Age", hue="Outcome", kde=True, multiple="stack")
+plt.title("Age Distribution by Outcome")
+plt.show()
+
+# --------------------------------------------
+# 4️⃣ Pregnancies vs Outcome
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.boxplot(x="Outcome", y="Pregnancies", data=df, palette="Set2")
+plt.title("Pregnancies vs Outcome")
+plt.show()
+
+# --------------------------------------------
+# 5️⃣ Correlation Heatmap
+# --------------------------------------------
+plt.figure(figsize=(10,6))
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Correlation Heatmap")
+plt.show()
+
+# --------------------------------------------
+# 6️⃣ Summary Statistics Grouped by Outcome
+# --------------------------------------------
+print("\n🔹 Mean values grouped by Outcome:")
+print(df.groupby("Outcome").mean())
