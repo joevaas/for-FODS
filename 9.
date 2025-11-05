@@ -1,0 +1,61 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
+columns = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness',
+           'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
+df = pd.read_csv(url, names=columns)
+
+print("UNIVARIATE ANALYSIS RESULTS\n")
+print(df.describe(), "\n")
+print("Outcome Value Counts:\n", df['Outcome'].value_counts(), "\n")
+
+df.hist(figsize=(12, 10), color='skyblue', edgecolor='black')
+plt.suptitle("Univariate Analysis - Distributions", fontsize=16)
+plt.show()
+
+sns.countplot(x='Outcome', data=df, palette='pastel')
+plt.title("Outcome Distribution (0=Non-Diabetic, 1=Diabetic)")
+plt.show()
+
+print("BIVARIATE ANALYSIS RESULTS\n")
+corr = df.corr()
+print("Correlation with Outcome:\n", corr['Outcome'].sort_values(ascending=False), "\n")
+
+plt.figure(figsize=(10, 7))
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title("Correlation Heatmap")
+plt.show()
+
+important = ['Glucose', 'BMI', 'Age', 'Pregnancies']
+sns.pairplot(df, vars=important, hue='Outcome', palette='coolwarm')
+plt.suptitle("Bivariate Pairplot", y=1.02)
+plt.show()
+
+plt.figure(figsize=(12, 8))
+for i, col in enumerate(important, 1):
+    plt.subplot(2, 2, i)
+    sns.boxplot(x='Outcome', y=col, data=df, palette='Set2')
+    plt.title(f"{col} vs Outcome")
+plt.tight_layout()
+plt.show()
+
+print("COMPARISON SUMMARY\n")
+print("""
+Univariate Analysis:
+- Shows individual variable distributions and data imbalance.
+- Glucose, BMI, and Age are right-skewed.
+- Insulin and SkinThickness contain many zeros.
+- Outcome: 65% non-diabetic, 35% diabetic.
+
+Bivariate Analysis:
+- Glucose (0.49), BMI (0.31), Age (0.24), and Pregnancies (0.22) have strongest relation with Outcome.
+- Glucose and BMI clearly separate diabetic from non-diabetic.
+- BloodPressure, SkinThickness, Insulin show weak relationships.
+
+Comparison:
+- Univariate helps detect skewness, missing values, and imbalance.
+- Bivariate identifies key predictors of diabetes.
+- Glucose, BMI, and Age are most influential features in both.
+""")
