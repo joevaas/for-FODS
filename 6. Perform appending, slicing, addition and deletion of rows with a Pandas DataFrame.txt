@@ -1,0 +1,73 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Age': [25, 30, 35, 40],
+    'City': ['New York', 'London', 'Paris', 'Tokyo']
+}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+# 1️⃣ Append a new row
+new_row = {'Name': 'Eve', 'Age': 28, 'City': 'Berlin'}
+df = df._append(new_row, ignore_index=True)
+print("\nAfter Appending a new row:")
+print(df)
+
+# 2️⃣ Slice rows (select specific rows)
+sliced_df = df[1:4]   # Select rows from index 1 to 3
+print("\nAfter Slicing rows (1 to 3):")
+print(sliced_df)
+
+# 3️⃣ Add a new row using loc
+df.loc[len(df)] = ['Frank', 32, 'Sydney']
+print("\nAfter Adding a new row using loc:")
+print(df)
+
+# 4️⃣ Delete a row
+df = df.drop(2)   # Delete the row with index 2
+print("\nAfter Deleting row with index 2:")
+print(df)
+🧾 Output
+sql
+Copy code
+Original DataFrame:
+      Name  Age      City
+0    Alice   25  New York
+1      Bob   30    London
+2  Charlie   35     Paris
+3    David   40     Tokyo
+
+After Appending a new row:
+      Name  Age      City
+0    Alice   25  New York
+1      Bob   30    London
+2  Charlie   35     Paris
+3    David   40     Tokyo
+4      Eve   28    Berlin
+
+After Slicing rows (1 to 3):
+    Name  Age    City
+1    Bob   30  London
+2 Charlie   35   Paris
+3  David   40   Tokyo
+
+After Adding a new row using loc:
+      Name  Age      City
+0    Alice   25  New York
+1      Bob   30    London
+2  Charlie   35     Paris
+3    David   40     Tokyo
+4      Eve   28    Berlin
+5    Frank   32    Sydney
+
+After Deleting row with index 2:
+     Name  Age     City
+0   Alice   25 New York
+1     Bob   30   London
+3   David   40    Tokyo
+4     Eve   28   Berlin
+5   Frank   32   Sydney
