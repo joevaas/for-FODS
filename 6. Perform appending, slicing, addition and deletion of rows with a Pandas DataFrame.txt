@@ -31,6 +31,7 @@ print(df)
 df = df.drop(2)   # Delete the row with index 2
 print("\nAfter Deleting row with index 2:")
 print(df)
+
 🧾 Output
 sql
 Copy code
