@@ -1,0 +1,69 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the concrete strength dataset
+df = pd.read_csv("Concrete_Data.csv")   # (Make sure dataset is in the same folder)
+
+# Draw a scatter plot between Cement and Concrete Strength
+plt.scatter(df['Cement'], df['Concrete compressive strength'], color='blue')
+
+# Add labels and title
+plt.title("Cement vs Concrete Strength")
+plt.xlabel("Cement (kg/m³)")
+plt.ylabel("Concrete Strength (MPa)")
+
+# Show the plot
+plt.show()
+Algorithm:
+
+Import pandas and matplotlib.pyplot.
+
+Load the “Concrete Strength” dataset using pd.read_csv().
+
+Choose two continuous variables — for example, Cement and Concrete Strength.
+
+Use plt.scatter() to plot the relationship.
+
+Label axes and add a title.
+
+Display the plot using plt.show().
+
+✅ Output:
+A scatter plot showing how the amount of cement affects concrete strength — points will show the relationship trend visually.
+
+B
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create DataFrame
+data = {
+    'Team': ['Australia', 'Bangladesh', 'England', 'India', 'Srilanka'],
+    'Rank_Points': [2500, 1000, 2000, 3000, 1500]
+}
+df = pd.DataFrame(data)
+
+# Draw Scatter Plot
+plt.scatter(df['Team'], df['Rank_Points'], color='green', marker='o')
+
+# Add labels and title
+plt.title("Team vs Rank Points")
+plt.xlabel("Team Name")
+plt.ylabel("Rank Points")
+
+# Show the plot
+plt.show()
+Algorithm:
+
+Import pandas and matplotlib.pyplot.
+
+Create a DataFrame with Team names and Rank Points.
+
+Use plt.scatter() to create the scatter plot.
+
+Label the x-axis as “Team Name” and y-axis as “Rank Points”.
+
+Display the plot using plt.show().
+
+Output
+A scatter plot showing each cricket team on the x-axis and their rank points on the y-axis.
