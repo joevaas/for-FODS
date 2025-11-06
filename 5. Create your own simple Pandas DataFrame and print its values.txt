@@ -1,0 +1,72 @@
+Q5. (i) Create your own simple Pandas DataFrame and print its values
+Aim:
+
+To create a simple Pandas DataFrame and display its contents.
+
+Algorithm:
+
+Import the Pandas library.
+
+Create a dictionary with data.
+
+Convert it to a DataFrame using pd.DataFrame().
+
+Print the DataFrame.
+
+Program:
+import pandas as pd
+
+data = {'Name': ['Arun', 'Bala', 'Chitra'],
+        'Age': [21, 22, 20],
+        'Marks': [85, 90, 88]}
+
+df = pd.DataFrame(data)
+print("Simple DataFrame:\n", df)
+
+Output:
+Simple DataFrame:
+     Name  Age  Marks
+0   Arun   21     85
+1   Bala   22     90
+2  Chitra  20     88
+
+Result:
+
+A simple DataFrame was created and printed successfully.
+
+Q5. (ii) Create your own DataFrame from dict of narray/list
+Aim:
+
+To create a Pandas DataFrame from a dictionary of lists.
+
+Algorithm:
+
+Import Pandas.
+
+Create a dictionary of lists or NumPy arrays.
+
+Convert to DataFrame using pd.DataFrame().
+
+Program:
+import pandas as pd
+import numpy as np
+
+data = {
+    'ID': np.array([101, 102, 103]),
+    'Department': ['CSE', 'ECE', 'EEE'],
+    'CGPA': [8.2, 8.9, 9.0]
+}
+
+df = pd.DataFrame(data)
+print("DataFrame from dict of arrays/lists:\n", df)
+
+Output:
+DataFrame from dict of arrays/lists:
+     ID Department  CGPA
+0  101        CSE   8.2
+1  102        ECE   8.9
+2  103        EEE   9.0
+
+Result:
+
+DataFrame was successfully created from a dictionary of arrays/lists.
