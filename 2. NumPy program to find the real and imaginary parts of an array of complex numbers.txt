@@ -1,0 +1,57 @@
+Q2. (i) Write a NumPy program to find the real and imaginary parts of an array of complex numbers
+Aim:
+
+To find real and imaginary parts of complex numbers using NumPy.
+
+Algorithm:
+
+Import NumPy.
+
+Create an array of complex numbers.
+
+Use .real and .imag attributes to extract parts.
+
+Program:
+import numpy as np
+
+arr = np.array([2+3j, 4+5j, 6+7j])
+print("Array:", arr)
+print("Real Part:", arr.real)
+print("Imaginary Part:", arr.imag)
+
+Output:
+Array: [2.+3.j 4.+5.j 6.+7.j]
+Real Part: [2. 4. 6.]
+Imaginary Part: [3. 5. 7.]
+
+Result:
+
+Real and imaginary parts were separated successfully.
+
+Q2. (ii) Write a NumPy program to convert a NumPy array into a CSV file
+Aim:
+
+To store NumPy array data into a CSV file.
+
+Algorithm:
+
+Import NumPy.
+
+Create an array.
+
+Use np.savetxt() to save it as a CSV file.
+
+Program:
+import numpy as np
+
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+np.savetxt("output.csv", arr, delimiter=",", fmt="%d")
+
+print("Array saved to CSV file successfully!")
+
+Output:
+Array saved to CSV file successfully!
+
+Result:
+
+NumPy array data was stored into a CSV file.
