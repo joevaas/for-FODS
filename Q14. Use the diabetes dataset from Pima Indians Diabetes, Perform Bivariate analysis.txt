@@ -1,0 +1,53 @@
+Q14. Use the diabetes dataset from Pima Indians Diabetes, Perform Bivariate analysis
+Aim:
+
+To perform Bivariate Analysis on the Pima Indians Diabetes dataset and visualize the relationship between two variables.
+
+Algorithm:
+
+Import the necessary libraries — Pandas, Seaborn, and Matplotlib.
+
+Load the Pima Indians Diabetes dataset (diabetes.csv).
+
+Select two numerical columns for analysis (e.g., Glucose and BMI).
+
+Use a scatter plot and correlation to analyze the relationship.
+
+Display the visualization.
+
+Program:
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("diabetes.csv")
+
+# Display first few rows
+print(df.head())
+
+# Perform bivariate analysis using scatterplot
+sns.scatterplot(x='Glucose', y='BMI', hue='Outcome', data=df)
+plt.title("Bivariate Analysis - Glucose vs BMI")
+plt.xlabel("Glucose Level")
+plt.ylabel("BMI")
+plt.show()
+
+# Correlation between Glucose and BMI
+corr = df['Glucose'].corr(df['BMI'])
+print("Correlation between Glucose and BMI:", corr)
+
+Output:
+   Pregnancies  Glucose  BloodPressure  SkinThickness  Insulin   BMI  ...
+0            6      148             72             35        0  33.6  ...
+1            1       85             66             29        0  26.6  ...
+...
+
+Correlation between Glucose and BMI: 0.22
+
+
+(Also displays a scatter plot showing the relationship between Glucose and BMI, color-coded by Outcome.)
+
+Result:
+
+The bivariate analysis revealed a positive correlation between Glucose and BMI, meaning that higher glucose levels are generally associated with higher BMI values. The scatter plot effectively visualized this relationship.
