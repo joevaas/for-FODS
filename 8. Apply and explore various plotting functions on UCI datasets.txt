@@ -1,0 +1,36 @@
+Q8. Apply and explore various plotting functions on UCI datasets
+Aim:
+
+To apply different Matplotlib plotting functions on UCI datasets.
+
+Algorithm:
+
+Import Pandas and Matplotlib.
+
+Load a UCI dataset (e.g., iris).
+
+Use plot(), hist(), and scatter() functions to visualize.
+
+Program:
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("iris.csv")
+
+df['sepal.length'].plot(kind='hist', title='Sepal Length Histogram')
+plt.show()
+
+df.plot(x='sepal.length', y='sepal.width', kind='scatter', title='Sepal Scatter Plot')
+plt.show()
+
+Output:
+
+Two plots are displayed:
+
+Histogram for sepal length.
+
+Scatter plot for sepal length vs width.
+
+Result:
+
+Various plotting functions were successfully applied on UCI dataset.
