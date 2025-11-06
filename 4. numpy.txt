@@ -17,8 +17,6 @@ Use .ndim to check and print the number of dimensions.
 
 ✅ Output Example:
 
-lua
-Copy code
 Array:
 [[[[[1 2 3 4]]]]]
 Number of dimensions: 5
@@ -44,7 +42,5 @@ Print both original and sorted arrays.
 
 ✅ Output Example:
 
-sql
-Copy code
 Original Array: [ True False  True False  True]
 Sorted Array: [False False  True  True  True]
