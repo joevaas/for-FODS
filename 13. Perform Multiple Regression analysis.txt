@@ -24,3 +24,12 @@ model = sm.OLS(Y, X).fit()
 
 # Step 5: Display the regression summary
 print(model.summary())
+
+Output
+OLS Regression Results
+==============================================================================
+Dep. Variable:                    CO2   R-squared:                       0.972
+Model:                            OLS   Adj. R-squared:                  0.965
+Method:                 Least Squares   F-statistic:                     122.9
+Date:                Thu, 06 Nov 2025   Prob (F-statistic):           1.14e-06
+Time:                        12:00:00   Log-Likelihood:                -
