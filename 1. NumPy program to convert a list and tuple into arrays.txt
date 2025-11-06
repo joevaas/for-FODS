@@ -1,0 +1,68 @@
+Aim:
+
+To convert a list and a tuple into NumPy arrays.
+
+Algorithm:
+
+Import NumPy library.
+
+Create a list and a tuple.
+
+Use np.array() to convert them into arrays.
+
+Display both arrays.
+
+Program:
+import numpy as np
+
+list1 = [1, 2, 3, 4, 5]
+tuple1 = (6, 7, 8, 9, 10)
+
+arr1 = np.array(list1)
+arr2 = np.array(tuple1)
+
+print("List to Array:", arr1)
+print("Tuple to Array:", arr2)
+
+Output:
+List to Array: [1 2 3 4 5]
+Tuple to Array: [ 6  7  8  9 10]
+
+Result:
+
+List and tuple were successfully converted into NumPy arrays.
+
+Q1. (ii) Write a NumPy program to convert Centigrade into Fahrenheit and vice versa
+Aim:
+
+To convert temperature values between Centigrade and Fahrenheit using NumPy arrays.
+
+Algorithm:
+
+Import NumPy.
+
+Create arrays of temperatures in Celsius.
+
+Use the formula F = (C * 9/5) + 32 to convert to Fahrenheit.
+
+Convert back using C = (F - 32) * 5/9.
+
+Program:
+import numpy as np
+
+celsius = np.array([0, 20, 37, 100])
+fahrenheit = (celsius * 9/5) + 32
+c_back = (fahrenheit - 32) * 5/9
+
+print("Celsius:", celsius)
+print("Fahrenheit:", fahrenheit)
+print("Converted Back to Celsius:", c_back)
+
+Output:
+Celsius: [  0  20  37 100]
+Fahrenheit: [ 32.   68.  98.6 212. ]
+Converted Back to Celsius: [  0.  20.  37. 100.]
+
+Result:
+
+Conversion between Celsius and Fahrenheit was done successfully.
