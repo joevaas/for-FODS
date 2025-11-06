@@ -1,0 +1,26 @@
+import pandas as pd
+import statsmodels.api as sm
+
+# Step 1: Create the dataset
+data = {
+    'Company': ['Toyota', 'BMW', 'Ford', 'Honda', 'Audi', 'Mercedes', 'Hyundai', 'Kia', 'Nissan', 'Volvo'],
+    'Model': ['Corolla', '320i', 'Focus', 'Civic', 'A4', 'C200', 'Elantra', 'Rio', 'Altima', 'S60'],
+    'Volume': [1600, 2000, 1800, 1600, 2200, 2100, 1700, 1400, 2500, 2400],
+    'Weight': [1250, 1500, 1350, 1200, 1600, 1550, 1280, 1100, 1650, 1620],
+    'CO2': [120, 132, 125, 118, 141, 139, 122, 108, 150, 147]
+}
+
+df = pd.DataFrame(data)
+
+# Step 2: Define dependent and independent variables
+X = df[['Volume', 'Weight']]
+Y = df['CO2']
+
+# Step 3: Add a constant term for the intercept
+X = sm.add_constant(X)
+
+# Step 4: Fit the multiple regression model
+model = sm.OLS(Y, X).fit()
+
+# Step 5: Display the regression summary
+print(model.summary())
