@@ -4,6 +4,7 @@ arr = np.array([1, 2, 3, 4], ndmin=5)
 print("Array:")
 print(arr)
 print("Number of dimensions:", arr.ndim)
+
 Algorithm:
 
 Import the NumPy module.
@@ -30,6 +31,7 @@ arr = np.array([True, False, True, False, True])
 sorted_arr = np.sort(arr)
 print("Original Array:", arr)
 print("Sorted Array:", sorted_arr)
+
 Algorithm:
 
 Import NumPy.
