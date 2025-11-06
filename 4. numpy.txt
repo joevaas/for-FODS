@@ -1,9 +1,6 @@
 import numpy as np
 
-# Create a 5-dimensional array
 arr = np.array([1, 2, 3, 4], ndmin=5)
-
-# Display the array and verify its dimensions
 print("Array:")
 print(arr)
 print("Number of dimensions:", arr.ndim)
@@ -29,13 +26,8 @@ B
 
 import numpy as np
 
-# Create a boolean array
 arr = np.array([True, False, True, False, True])
-
-# Sort the boolean array
 sorted_arr = np.sort(arr)
-
-# Display the result
 print("Original Array:", arr)
 print("Sorted Array:", sorted_arr)
 Algorithm:
